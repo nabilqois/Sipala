@@ -10,8 +10,24 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_diagnosa"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         tools:listitem="@layout/row_gejala"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_diagnosa"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_diagnosa"
+        style="@style/Button"
+        android:layout_marginTop="8dp"
+        android:text="Diagnosa"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/rv_diagnosa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
