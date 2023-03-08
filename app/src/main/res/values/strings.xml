@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">sipala</string>
+    <string name="on_boarding_text"><![CDATA[Masalah lambung jadi lebih mudah & fleksibel]]></string>
+    <string name="get_started">Get Started</string>
+    <string name="logo_sipala">Logo Sipala</string>
+    <string name="sign_in">Sign In</string>
 </resources>
