@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/card_diagnosa_gejala"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -15,6 +15,7 @@
         >
 
         <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cb_diagnosa_gejala"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Testing"
