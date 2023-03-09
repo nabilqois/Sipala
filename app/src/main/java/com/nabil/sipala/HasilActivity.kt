@@ -1,5 +1,6 @@
 package com.nabil.sipala
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,8 +23,17 @@ class HasilActivity : AppCompatActivity() {
             intent.getParcelableExtra<Premis>("EXTRA")
         }
         Log.d("Hasil", premis.toString())
-
-
+        if (premis != null) {
+            for ((index, value) in premis.listGejala.withIndex()) {
+                binding.tvGejalaContent.append("${index+1}. ${value.name} \n")
+            }
+        }
+//        binding.tvGejalaContent.text = premis?.listGejala?.get(0)?.name ?: "text"
+        binding.btnBackHome.setOnClickListener {
+            val toHome = Intent(this, MainActivity::class.java)
+            toHome.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(toHome)
+        }
     }
 
     companion object {
