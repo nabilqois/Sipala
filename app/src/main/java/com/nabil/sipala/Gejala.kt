@@ -8,3 +8,8 @@ data class Gejala(
     val id: String,
     val name: String
 ) : Parcelable
+
+@Parcelize
+data class Premis(
+    val listGejala: List<Gejala>
+) : Parcelable

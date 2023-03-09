@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nabil.sipala.databinding.ActivityDiagnosaBinding
 
 class DiagnosaActivity : AppCompatActivity() {
-    private val premis = arrayListOf<Gejala>()
+    private val premis = mutableListOf<Gejala>()
     private lateinit var binding: ActivityDiagnosaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,9 +34,10 @@ class DiagnosaActivity : AppCompatActivity() {
         }
 
         binding.btnDiagnosa.setOnClickListener {
-            Log.d("btn_diagnosa", "berhasil ditekan")
+            Log.d("btn_diagnosa", premis.toString())
+            val premisAll = Premis(premis)
             val toHasil = Intent(this, HasilActivity::class.java)
-            toHasil.putExtra("EXTRA", premis)
+            toHasil.putExtra("EXTRA", premisAll)
             startActivity(toHasil)
         }
 
