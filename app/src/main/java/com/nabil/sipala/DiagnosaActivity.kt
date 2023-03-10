@@ -1,6 +1,7 @@
 package com.nabil.sipala
 
 import android.content.Intent
+import android.graphics.BlendMode
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.shape.MaterialShapeDrawable
 import com.nabil.sipala.databinding.ActivityDiagnosaBinding
 
 class DiagnosaActivity : AppCompatActivity() {
@@ -17,6 +19,8 @@ class DiagnosaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDiagnosaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        binding.appbar. = MaterialShapeDrawable.createWithElevationOverlay(this);
 
         val diagnosaAdapter = DiagonsaAdapter(ListGejala.all)
         val linearLayoutManager = LinearLayoutManager(this)
@@ -41,6 +45,6 @@ class DiagnosaActivity : AppCompatActivity() {
             startActivity(toHasil)
         }
 
-        binding.rvDiagnosa.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+//        binding.rvDiagnosa.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
     }
 }

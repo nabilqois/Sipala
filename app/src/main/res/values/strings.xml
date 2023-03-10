@@ -5,4 +5,6 @@
     <string name="logo_sipala">Logo Sipala</string>
     <string name="sign_in">Sign In</string>
     <string name="back_home"><u>Back Home</u></string>
+    <string name="gejala">Gejala</string>
+    <string name="hasil">Hasil</string>
 </resources>
