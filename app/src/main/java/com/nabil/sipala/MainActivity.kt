@@ -16,7 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnGetStarted.setOnClickListener {
             Log.d("MainActivity", "GetStarted ditekan")
-            startActivity(Intent(this, DiagnosaActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
+        binding.bntSignIn.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
         }
     }
 }
