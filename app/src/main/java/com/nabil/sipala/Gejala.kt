@@ -11,5 +11,5 @@ data class Gejala(
 
 @Parcelize
 data class Premis(
-    val listGejala: List<Gejala>
+    val premis: List<Gejala>
 ) : Parcelable

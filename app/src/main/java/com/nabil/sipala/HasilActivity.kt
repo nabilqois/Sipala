@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.annotation.RequiresApi
 import com.nabil.sipala.databinding.ActivityHasilBinding
-import java.util.ArrayList
 
 class HasilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHasilBinding
@@ -24,7 +23,7 @@ class HasilActivity : AppCompatActivity() {
         }
         Log.d("Hasil", premis.toString())
         if (premis != null) {
-            for ((index, value) in premis.listGejala.withIndex()) {
+            for ((index, value) in premis.premis.withIndex()) {
                 binding.tvGejalaContent.append("${index+1}. ${value.name} \n")
             }
         }
