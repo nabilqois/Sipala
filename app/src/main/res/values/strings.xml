@@ -9,4 +9,9 @@
     <string name="hasil">Hasil</string>
     <string name="awali_langkahmu_untuk_lambung_yang_lebih_sehat">Awali langkahmu untuk lambung yang lebih sehat!</string>
     <string name="diagnosa_gejala">Diagnosa Gejala</string>
+    <string name="get_in">Get in and \nstart checking your stomach !</string>
+    <string name="create_new_account"><u>Create New Account</u></string>
+    <string name="forgot_my_password"><u>Forgot My Password</u></string>
+    <string name="password">Password</string>
+    <string name="email">Email Address</string>
 </resources>

@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.bntSignIn.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, SignInActivity::class.java))
         }
     }
 }
