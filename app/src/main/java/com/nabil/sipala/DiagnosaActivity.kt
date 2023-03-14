@@ -41,8 +41,14 @@ class DiagnosaActivity : AppCompatActivity() {
             Log.d("btn_diagnosa", premis.toString())
             val premisAll = Premis(premis)
             val toHasil = Intent(this, HasilActivity::class.java)
-            toHasil.putExtra("EXTRA", premisAll)
-            startActivity(toHasil)
+            toHasil.putExtra(HasilActivity.EXTRA, premisAll)
+
+            if (premis.isEmpty()) {
+                Toast.makeText(this, "Harap pilih gejala terlebih dahulu", Toast.LENGTH_SHORT).show()
+            } else {
+                startActivity(toHasil)
+            }
+
         }
 
 //        binding.rvDiagnosa.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
