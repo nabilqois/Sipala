@@ -11,4 +11,9 @@
     
     <color name="choco_red">#FFB06161</color>
     <color name="pink_rose">#FFE06379</color>
+    <color name="softpink">#CCA69A</color>
+    <color name="darkpink">#B06161</color>
+    <color name="blue">#4734BC</color>
+    <color name="gray">#CFD2C5</color>
+    <color name="red">#F44336</color>
 </resources>

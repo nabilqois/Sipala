@@ -14,4 +14,18 @@
     <string name="forgot_my_password"><u>Forgot My Password</u></string>
     <string name="password">Password</string>
     <string name="email">Email Address</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="re_enter_your_passsword">Re-enter Your Passsword</string>
+    <string name="login">I have account</string>
+    <string name="get_in_and">Get in and</string>
+    <string name="start_checking_your_stomach">Start checking your stomach!</string>
+    <string name="forgor_password"><u>Forgot Your Password</u></string>
+    <string name="signin">Sign in</string>
+    <string name="null_email">Please Enter Your Email!</string>
+    <string name="not_valid_email">Your Email format was Invalid</string>
+    <string name="null_password">Please Enter Your Your Password!</string>
+    <string name="should_6_password">At least enter 6 characters in password</string>
+    <string name="pass_not_same">Your first and second Password Was Not Same!</string>
+
 </resources>
