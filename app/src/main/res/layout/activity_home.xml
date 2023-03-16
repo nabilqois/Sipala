@@ -166,7 +166,7 @@
                             android:id="@+id/img_btn_settings"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
-                            android:src="@drawable/person_outline"
+                            android:src="@drawable/settings_outline"
                             style="?android:attr/borderlessButtonStyle"
                             app:tint="@color/pink_rose"
                             android:contentDescription="profile button"
@@ -175,7 +175,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Profiles"
+                        android:text="Settings"
                         android:textSize="16sp"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="30dp"

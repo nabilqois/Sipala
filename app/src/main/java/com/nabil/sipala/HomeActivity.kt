@@ -31,6 +31,10 @@ class HomeActivity : AppCompatActivity() {
         binding.cardDiagnosaGejala.setOnClickListener {
             startActivity(Intent(this, DiagnosaActivity::class.java))
         }
+
+        binding.cardSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 
 
