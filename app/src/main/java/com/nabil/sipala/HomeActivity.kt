@@ -3,6 +3,9 @@ package com.nabil.sipala
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.nabil.sipala.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -12,6 +15,18 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val user = Firebase.auth.currentUser
+
+        user?.let {
+            if (it.displayName?.isEmpty() == true) {
+                binding.tvUsername.text = it.email
+                Log.d("firebase", "kosong")
+            } else {
+                binding.tvUsername.text = it.displayName
+            }
+        }
+        user?.displayName?.let { Log.d("displayName", it) }
 
         binding.cardDiagnosaGejala.setOnClickListener {
             startActivity(Intent(this, DiagnosaActivity::class.java))

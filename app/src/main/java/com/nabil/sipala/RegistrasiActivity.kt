@@ -3,23 +3,34 @@ package com.nabil.sipala
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.ktx.Firebase
 import com.nabil.sipala.databinding.ActivityRegistrasiBinding
 
 class RegistrasiActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegistrasiBinding
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrasiBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_registrasi)
+        setContentView(binding.root)
         supportActionBar?.hide()
 
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
-
+        binding.btnRegister.setOnClickListener {
+            register()
+            Log.d("clicked", "tertekan")
+        }
         txtLoginListener()
     }
 
@@ -77,7 +88,29 @@ class RegistrasiActivity : AppCompatActivity() {
                 binding.editConfpass.error = resources.getString(R.string.pass_not_same)
                 return
             } else {
+                val nameUpdate = userProfileChangeRequest {
+                    displayName = name
+                }
 
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) {
+                        if (it.isSuccessful) {
+                            Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
+                            val user = auth.currentUser
+                            user?.updateProfile(nameUpdate)
+                                ?.addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        Log.d("firebase", "nama berhasil ditambahkan")
+                                    }
+                                }
+                            startActivity(Intent(this, SignInActivity::class.java))
+                        } else {
+                            Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+//                    .addOnSuccessListener {
+//
+//                    }
             }
         }
     }

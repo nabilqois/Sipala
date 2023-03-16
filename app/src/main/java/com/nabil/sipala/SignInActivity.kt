@@ -6,10 +6,13 @@ import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.nabil.sipala.databinding.ActivitySignInBinding
 
 class SignInActivity : AppCompatActivity() {
-
+    private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivitySignInBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +21,12 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
+        // Initialize Firebase Auth
+        auth = Firebase.auth
 
+        binding.btnLogin.setOnClickListener {
+            login()
+        }
         txtRegisterListener()
     }
 
@@ -53,7 +61,15 @@ class SignInActivity : AppCompatActivity() {
 
             return
         } else {
-
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this){
+                    if (it.isSuccessful) {
+                        Toast.makeText(this, "Selamat Datang", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this, HomeActivity::class.java))
+                    } else {
+                        Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
+                    }
+                }
         }
     }
 
