@@ -17,6 +17,10 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = Firebase.auth.currentUser
+        if (user == null) {
+            binding.tvUsername.text = "Guest"
+            Log.d("user firebase", "kosong")
+        }
 
         user?.let {
             if (it.displayName?.isEmpty() == true) {
@@ -33,6 +37,9 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.cardSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
+        binding.imgBtnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
     }
