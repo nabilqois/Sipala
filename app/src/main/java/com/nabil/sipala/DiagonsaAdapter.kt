@@ -24,7 +24,9 @@ class DiagonsaAdapter(private val listGejala: ArrayList<Gejala>) : RecyclerView.
             val isChecked = (it as MaterialCheckBox).isChecked
             if (isChecked) {
                 Log.d("cb", "Dicek ${listGejala[holder.adapterPosition]}")
-                onItemClickCallback.onItemClickCallback(listGejala[holder.adapterPosition])
+                onItemClickCallback.onCheckedCallback(listGejala[holder.adapterPosition])
+            } else {
+                onItemClickCallback.onUncheckedCallback(listGejala[holder.adapterPosition])
             }
         }
 
@@ -38,7 +40,8 @@ class DiagonsaAdapter(private val listGejala: ArrayList<Gejala>) : RecyclerView.
     }
 
     interface OnItemClickCallback {
-        fun onItemClickCallback(data: Gejala)
+        fun onCheckedCallback(data: Gejala)
+        fun onUncheckedCallback(data: Gejala)
     }
 }
 

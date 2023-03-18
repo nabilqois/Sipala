@@ -28,10 +28,17 @@ class DiagnosaActivity : AppCompatActivity() {
             layoutManager = linearLayoutManager
             adapter = diagnosaAdapter
             diagnosaAdapter.setOnItemClickCallback(object : DiagonsaAdapter.OnItemClickCallback {
-                override fun onItemClickCallback(data: Gejala) {
+                override fun onCheckedCallback(data: Gejala) {
                     Log.d("Ditekan", "berhasil ditekan")
                     Toast.makeText(this@DiagnosaActivity, "berhasil", Toast.LENGTH_SHORT).show()
                     premis.add(data)
+                    Log.d("listdiagnosa", premis.toString())
+                }
+
+                override fun onUncheckedCallback(data: Gejala) {
+                    Toast.makeText(this@DiagnosaActivity, "Dihapus", Toast.LENGTH_SHORT).show()
+                    premis.remove(data)
+                    Log.d("listdiagnosa", premis.toString())
                 }
 
             })
