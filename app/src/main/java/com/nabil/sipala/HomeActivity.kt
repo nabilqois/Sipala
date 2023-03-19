@@ -42,7 +42,24 @@ class HomeActivity : AppCompatActivity() {
         binding.imgBtnSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
+
+        binding.cardProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+        binding.imgBtnProfile.setOnClickListener {
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
     }
 
+    override fun onResume() {
+        super.onResume()
 
+        val user = Firebase.auth.currentUser
+
+        runOnUiThread {
+            if (user != null) {
+                binding.tvUsername.text = user.displayName
+            }
+        }
+    }
 }

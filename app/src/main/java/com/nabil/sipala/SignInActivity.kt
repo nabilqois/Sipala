@@ -65,7 +65,9 @@ class SignInActivity : AppCompatActivity() {
                 .addOnCompleteListener(this){
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Selamat Datang", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this, HomeActivity::class.java))
+                        val toHome = Intent(this, HomeActivity::class.java)
+                        toHome.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(toHome)
                     } else {
                         Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                     }
