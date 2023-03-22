@@ -27,5 +27,10 @@ class SettingsActivity : AppCompatActivity() {
             toMain.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(toMain)
         }
+
+        binding.cardTheme.setOnClickListener {
+            val toTheme = Intent(this, ThemeActivity::class.java)
+            startActivity(toTheme)
+        }
     }
 }
