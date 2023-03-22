@@ -45,4 +45,22 @@
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
+    <style name="MyAppbar">
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
+    <style name="MyNav">
+        <item name="android:textColor">@color/black</item>
+        <item name="navigationIconTint">@color/black</item>
+    </style>
+
+    <style name="MyIcon">
+        <item name="tint">@color/black</item>
+    </style>
+
+    <style name="TextInputDisable" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">#FFEDEEF0</item>
+    </style>
+
+
 </resources>

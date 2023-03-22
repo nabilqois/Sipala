@@ -8,9 +8,9 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
+        style="@style/MyAppbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         app:statusBarForeground="@color/pink_rose"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,11 +18,11 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            style="@style/MyNav"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Settings"
             app:titleCentered="true"
-            app:titleTextColor="@color/black"
             app:navigationIcon="@drawable/ic_arrow_back"/>
 
 
@@ -44,6 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_power"
+                style="@style/MyIcon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -60,6 +61,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyIcon"
                 android:src="@drawable/ic_arrow_forward"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -86,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_palette"
+                style="@style/MyIcon"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -102,6 +105,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/MyIcon"
                 android:src="@drawable/ic_arrow_forward"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
