@@ -25,7 +25,11 @@
             android:fontFamily="@font/nunito_regular"
             />
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="10dp"
             android:id="@+id/layoutName"
             android:textStyle="bold"
@@ -38,7 +42,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editFullname"
-                android:background="@drawable/rounded_text"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textStyle="bold"
@@ -61,7 +64,11 @@
             />
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="10dp"
             android:id="@+id/layoutEmail"
             android:layout_width="match_parent"
@@ -75,7 +82,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEmail"
-                android:background="@drawable/rounded_text"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textStyle="bold"
@@ -99,8 +105,12 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/layoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -114,7 +124,6 @@
             <com.nabil.sipala.CustomEditTextPassword
                 android:id="@+id/editPass"
                 android:inputType="textPassword"
-                android:background="@drawable/rounded_text"
                 android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -136,8 +145,12 @@
             />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="10dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/layoutPassword2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -151,7 +164,6 @@
             <com.nabil.sipala.CustomEditTextPassword
                 android:id="@+id/editConfpass"
                 android:inputType="textPassword"
-                android:background="@drawable/rounded_text"
                 android:drawablePadding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"

@@ -63,7 +63,11 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="6dp"
             android:id="@+id/layoutEmail"
             android:layout_width="match_parent"
@@ -75,7 +79,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editEmail"
-                android:background="@drawable/rounded_text"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textSize="19sp"
@@ -100,8 +103,12 @@
             />
 
         <com.google.android.material.textfield.TextInputLayout
+            style="?attr/textInputOutlinedStyle"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusBottomEnd="10dp"
             android:layout_marginTop="6dp"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/layoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -113,7 +120,6 @@
                 android:id="@+id/editPass"
                 android:layout_width="match_parent"
                 android:layout_height="61dp"
-                android:background="@drawable/rounded_text"
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/nunito_regular"
                 android:inputType="textPassword"
