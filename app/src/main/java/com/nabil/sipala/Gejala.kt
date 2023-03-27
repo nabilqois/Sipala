@@ -13,3 +13,9 @@ data class Gejala(
 data class Premis(
     val premis: List<Gejala>
 ) : Parcelable
+
+data class Rule(
+    val Rid: String,
+    val kondisi: List<String>,
+    val hasil: String
+)
