@@ -34,11 +34,12 @@ class HomeActivity : AppCompatActivity() {
             this
         ) { isDarkModeActive: Boolean ->
             if (isDarkModeActive) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 binding.tvProfiles.setTextColor(ContextCompat.getColor(this, R.color.black))
                 binding.tvSettings.setTextColor(ContextCompat.getColor(this, R.color.black))
             } else {
-                binding.tvProfiles.setTextColor(ContextCompat.getColor(this, R.color.white))
-                binding.tvSettings.setTextColor(ContextCompat.getColor(this, R.color.white))
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
 
             }
         }

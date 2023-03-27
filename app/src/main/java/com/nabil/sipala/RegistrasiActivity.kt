@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +25,7 @@ class RegistrasiActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        // Initialize Firebase Auth
+
         auth = Firebase.auth
 
         binding.btnRegister.setOnClickListener {
@@ -88,12 +89,14 @@ class RegistrasiActivity : AppCompatActivity() {
                 binding.editConfpass.error = resources.getString(R.string.pass_not_same)
                 return
             } else {
+                binding.progressBar.visibility = View.VISIBLE
                 val nameUpdate = userProfileChangeRequest {
                     displayName = name
                 }
 
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) {
+                        binding.progressBar.visibility = View.INVISIBLE
                         if (it.isSuccessful) {
                             Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
                             val user = auth.currentUser
@@ -108,9 +111,7 @@ class RegistrasiActivity : AppCompatActivity() {
                             Toast.makeText(this, it.exception?.message, Toast.LENGTH_SHORT).show()
                         }
                     }
-//                    .addOnSuccessListener {
-//
-//                    }
+
             }
         }
     }

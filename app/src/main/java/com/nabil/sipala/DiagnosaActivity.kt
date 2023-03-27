@@ -20,7 +20,7 @@ class DiagnosaActivity : AppCompatActivity() {
         binding = ActivityDiagnosaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.appbar. = MaterialShapeDrawable.createWithElevationOverlay(this);
+
 
         val diagnosaAdapter = DiagonsaAdapter(ListGejala.all)
         val linearLayoutManager = LinearLayoutManager(this)
@@ -30,7 +30,7 @@ class DiagnosaActivity : AppCompatActivity() {
             diagnosaAdapter.setOnItemClickCallback(object : DiagonsaAdapter.OnItemClickCallback {
                 override fun onCheckedCallback(data: Gejala) {
                     Log.d("Ditekan", "berhasil ditekan")
-                    Toast.makeText(this@DiagnosaActivity, "berhasil", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@DiagnosaActivity, "Ditambahkan", Toast.LENGTH_SHORT).show()
                     premis.add(data)
                     Log.d("listdiagnosa", premis.toString())
                 }
@@ -58,6 +58,6 @@ class DiagnosaActivity : AppCompatActivity() {
 
         }
 
-//        binding.rvDiagnosa.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
+
     }
 }

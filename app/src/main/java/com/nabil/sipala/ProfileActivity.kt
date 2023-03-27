@@ -31,10 +31,11 @@ class ProfileActivity : AppCompatActivity() {
                 val imageUri: Uri? = result.data?.data
 
                 val email = user?.email
-//                val sd = getFileName(applicationContext, imageUri!!)
 
+                binding.progressBar.visibility = View.VISIBLE
                 val uploadTask = storageRef.child("$email/photo").putFile(imageUri!!)
                 uploadTask.addOnSuccessListener {
+                    binding.progressBar.visibility = View.INVISIBLE
                     storageRef.child("$email/photo").downloadUrl.addOnSuccessListener {
                         Glide.with(this)
                             .load(it)
@@ -46,6 +47,7 @@ class ProfileActivity : AppCompatActivity() {
                         Log.e("Firebase", "Failed in downloading")
                     }
                 }.addOnFailureListener {
+                    binding.progressBar.visibility = View.INVISIBLE
                     Log.e("Firebase", "Image Upload fail")
                 }
             }
@@ -59,8 +61,6 @@ class ProfileActivity : AppCompatActivity() {
         val view: View? = this.currentFocus
         view?.clearFocus()
 
-
-//        val user = Firebase.auth.currentUser
 
         if (user != null) {
             Log.d("Firebase", user.email.toString())
@@ -85,9 +85,10 @@ class ProfileActivity : AppCompatActivity() {
                     displayName = binding.edtFullName.text.toString().trim()
                     Log.d("ProfileActivity", binding.edtFullName.text.toString().trim())
                 }
-
+                binding.progressBar.visibility = View.VISIBLE
                 user.updateProfile(nameUpdated)
                     .addOnCompleteListener {
+                        binding.progressBar.visibility = View.INVISIBLE
                         if (it.isSuccessful) {
                             Toast.makeText(this, "Nama Berhasil Diubah", Toast.LENGTH_SHORT).show()
                             Log.d("ProfileActivity", user.displayName.toString())

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.firebase.auth.FirebaseAuth
@@ -21,7 +22,7 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        // Initialize Firebase Auth
+
         auth = Firebase.auth
 
         binding.btnLogin.setOnClickListener {
@@ -61,8 +62,10 @@ class SignInActivity : AppCompatActivity() {
 
             return
         } else {
+            binding.progressBar.visibility = View.VISIBLE
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this){
+                    binding.progressBar.visibility = View.INVISIBLE
                     if (it.isSuccessful) {
                         Toast.makeText(this, "Selamat Datang", Toast.LENGTH_SHORT).show()
                         val toHome = Intent(this, HomeActivity::class.java)

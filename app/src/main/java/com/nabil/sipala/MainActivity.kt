@@ -11,6 +11,8 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.nabil.sipala.databinding.ActivityMainBinding
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -20,6 +22,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        val user = Firebase.auth.currentUser
+        if (user != null) {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportActionBar?.hide()
+
         val pref = SettingPreferences.getInstance(dataStore)
         val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
             ThemeViewModel::class.java
@@ -35,15 +51,8 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        supportActionBar?.hide()
 
         binding.btnGetStarted.setOnClickListener {
-            Log.d("MainActivity", "GetStarted ditekan")
             startActivity(Intent(this, HomeActivity::class.java))
         }
 
