@@ -56,7 +56,7 @@ class HasilActivity : AppCompatActivity() {
             }
         }
         Log.d("Premis", premis.toString())
-//        binding.tvGejalaContent.text = premis?.listGejala?.get(0)?.name ?: "text"
+
         binding.btnBackHome.setOnClickListener {
             val toHome = Intent(this, HomeActivity::class.java)
             toHome.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -64,7 +64,7 @@ class HasilActivity : AppCompatActivity() {
         }
 
 
-//        Log.d("isi queue", queue.toString())
+        Log.d("isi queue", queue.toString())
         var completed = false
         while(!completed) {
             completed = true
@@ -119,7 +119,6 @@ class HasilActivity : AppCompatActivity() {
             binding.tvPenyakit.text = "Tidak ada penyakit yang cocok"
             Log.d("algorithm", "hasil.isEmpty()")
         } else {
-//            binding.tvPenyakit.text = penyakit[hasil.last().hasil]
             val strBuilder = StringBuilder()
             hasil.forEach {
                 strBuilder.appendLine(penyakit[it.hasil])
@@ -159,7 +158,6 @@ class HasilActivity : AppCompatActivity() {
             Log.d("algorithm", "premisValue check : $premisValue")
             rule.forEach { r  ->
                 r.kondisi.forEach { kondisi ->
-//                println("r.kondisi ${r.kondisi}")
                     if (kondisi == premisValue) {
                         Log.d("algorithm", "-----")
                         Log.d("algorithm", "rule yg sama : ${r.Rid}")
