@@ -27,5 +27,6 @@
     <string name="null_password">Please Enter Your Your Password!</string>
     <string name="should_6_password">At least enter 6 characters in password</string>
     <string name="pass_not_same">Your first and second Password Was Not Same!</string>
+    <string name="tips_lambung">Lambung adalah organ pencernaan yang terdapat dibagian perut manusia. Lambung yang sehat dapat menjalankan tugasnya dengan baik yakni untuk menampung dan mencerna makanan serta menyerap nutrisi dari makanan yang kita konsumsi. Jika lambung mengalami gangguan, nutrisi dalam makanan tidak dapat dicerna secara maksimal dan perut akan merasa tidak enak. Oleh karena inim menjaga kesehatan lambung amatlah penting supaya kita dapat nyaman menyantap makanan dan kebutuhan nutrisi terpenuhi. </string>
 
 </resources>

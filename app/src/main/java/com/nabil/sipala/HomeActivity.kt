@@ -78,6 +78,13 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
+        binding.tvTipsKesehatan.setOnClickListener {
+            startActivity(Intent(this, TipsKesehatanLambungActivity::class.java))
+        }
+        binding.icResearch.setOnClickListener {
+            startActivity(Intent(this, TipsKesehatanLambungActivity::class.java))
+        }
+
 
     }
 
