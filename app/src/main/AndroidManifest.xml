@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Sipala"
         tools:targetApi="31">
         <activity
+            android:name=".AboutActivity"
+            android:exported="false" />
+        <activity
             android:name=".TipsKesehatanLambungActivity"
             android:exported="false" />
         <activity

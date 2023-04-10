@@ -8,9 +8,10 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
-        android:backgroundTint="?attr/colorOnPrimary"
+        android:backgroundTint="@color/pink_rose"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:elevation="0dp"
         app:statusBarForeground="@color/pink_rose"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Settings"
+            app:titleTextColor="@color/white"
             app:titleCentered="true"
+            app:navigationIconTint="@color/white"
             app:navigationIcon="@drawable/ic_arrow_back"/>
 
 
@@ -100,6 +103,49 @@
                 android:textSize="18sp"
                 android:layout_marginStart="10dp"
                 app:layout_constraintStart_toEndOf="@id/ic_theme"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MyIcon"
+                android:src="@drawable/ic_arrow_forward"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_about"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:contentPadding="20dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/ic_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_about"
+                style="@style/MyIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:contentDescription="tombol logout" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/ic_about"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
             <ImageView

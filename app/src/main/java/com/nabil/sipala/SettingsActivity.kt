@@ -4,8 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.nabil.sipala.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
@@ -31,6 +29,11 @@ class SettingsActivity : AppCompatActivity() {
         binding.cardTheme.setOnClickListener {
             val toTheme = Intent(this, ThemeActivity::class.java)
             startActivity(toTheme)
+        }
+
+        binding.cardAbout.setOnClickListener {
+            val toAbout = Intent(this, AboutActivity::class.java)
+            startActivity(toAbout)
         }
     }
 }

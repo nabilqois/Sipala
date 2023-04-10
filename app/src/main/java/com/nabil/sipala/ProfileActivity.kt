@@ -37,7 +37,7 @@ class ProfileActivity : AppCompatActivity() {
                 uploadTask.addOnSuccessListener {
                     binding.progressBar.visibility = View.INVISIBLE
                     storageRef.child("$email/photo").downloadUrl.addOnSuccessListener {
-                        Glide.with(this)
+                        Glide.with(applicationContext)
                             .load(it)
                             .circleCrop()
                             .into(binding.imgProfile)
