@@ -35,4 +35,13 @@
     <style name="txt_light_b_dark_w">
         <item name="android:textColor">@color/white</item>
     </style>
+
+    <style name="txt_light_p_dark_w">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="card_stroke">
+        <item name="strokeColor">@color/white</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
 </resources>

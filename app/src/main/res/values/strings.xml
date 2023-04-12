@@ -31,4 +31,5 @@
     <string name="about_text">Sistem Pakar Diagnosa Penyakit Lambung digunakan untuk mendiagnosa gejala-gejala yang mungkin terjadi pada lambung. Aplikasi ini hanya untuk mendiagnosa, apabila Anda mengalami gejala dan mendapatkan diagnosa dari Aplikasi Kami, disarankan untuk segera melakukan pemeriksaan lebih lanjut dengan dokter pada rumah sakit terdekat.</string>
     <string name="dev_list">Muhammad Rafi Aziz \nMuhamad Faheem Sultan Al Azis \nNabilah Putri Cantika \nNabil Qois \nDevany Putri Mirasati \nDinda Fathihah Sari \nAdam Aristama \nKhumairotul Khoiriah</string>
     <string name="univ_year">UNIVERSITAS INDRAPRASTA PGRI \n2023</string>
+    <string name="note">NOTE : Aplikasi ini hanya untuk mendiagnosa. Apabila Anda mengalami gejala dan mendapatkan diagnosa dari Aplikasi Kami, disarankan untuk segera melakukan pemeriksaan lebih lanjut dengan dokter pada rumah sakit terdekat.</string>
 </resources>

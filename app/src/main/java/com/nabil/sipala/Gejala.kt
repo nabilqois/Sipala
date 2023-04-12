@@ -19,3 +19,11 @@ data class Rule(
     val kondisi: List<String>,
     val hasil: String
 )
+
+data class Penyakit(
+    val nama: String,
+    val pengertian: String,
+    val penyebab: List<String>,
+    val pengobatan: List<String>,
+    val pencegahan: List<String>
+)

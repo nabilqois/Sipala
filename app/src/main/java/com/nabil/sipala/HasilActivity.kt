@@ -27,12 +27,19 @@ class HasilActivity : AppCompatActivity() {
         Rule("R4", listOf("G1", "G2", "G7", "G8"), "A4"),
         Rule("R5", listOf("G2", "G3", "G6", "G13", "G14", "G15"), "A5"),
     )
-    private val penyakit = mapOf<String, String>(
-        "A1" to "Tukak Lambung",
-        "A2" to "Gastroparesis",
-        "A3" to "Gerd",
-        "A4" to "Gastritis",
-        "A5" to "Kanker Lambung"
+//    private val penyakit = mapOf<String, String>(
+//        "A1" to ListPenyakit.all[0].nama,
+//        "A2" to ListPenyakit.all[1].nama,
+//        "A3" to ListPenyakit.all[2].nama,
+//        "A4" to "Gastritis",
+//        "A5" to "Kanker Lambung"
+//    )
+    private val penyakit = mapOf<String, Penyakit>(
+        "A1" to ListPenyakit.all[0],
+        "A2" to ListPenyakit.all[1],
+        "A3" to ListPenyakit.all[2],
+        "A4" to ListPenyakit.all[3],
+        "A5" to ListPenyakit.all[4],
     )
     private val queue = mutableListOf<Rule>()
     private val hasil = mutableListOf<Rule>()
@@ -119,15 +126,27 @@ class HasilActivity : AppCompatActivity() {
             binding.tvPenyakit.text = "Tidak ada penyakit yang cocok"
             Log.d("algorithm", "hasil.isEmpty()")
         } else {
-            val strBuilder = StringBuilder()
-            hasil.forEach {
-                strBuilder.appendLine(penyakit[it.hasil])
+//            val strBuilder = StringBuilder()
+//            hasil.forEach {
+//                strBuilder.appendLine(penyakit[it.hasil])
+//            }
+//            binding.tvPenyakit.text = strBuilder.trim()
+            val penyakitAkhir = penyakit[hasil.last().hasil]
+            binding.tvPenyakit.text = penyakitAkhir?.nama
+            binding.tvPengertian.text = penyakitAkhir?.pengertian
+            val penyebab = StringBuilder()
+            penyakitAkhir?.penyebab?.forEach {
+                penyebab.appendLine("- $it")
             }
-            binding.tvPenyakit.text = strBuilder.trim()
+            binding.tvPenyebabList.text = penyebab
+            val pencegahan = StringBuilder()
+            penyakitAkhir?.pencegahan?.forEach {
+                pencegahan.appendLine("- $it")
+            }
+            binding.tvPencegahanList.text = pencegahan
         }
 
     }
-
     override fun onStart() {
         super.onStart()
         val pref = SettingPreferences.getInstance(dataStore)
@@ -139,10 +158,10 @@ class HasilActivity : AppCompatActivity() {
             this
         ) { isDarkModeActive: Boolean ->
             if (isDarkModeActive) {
-                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.black))
+//                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.black))
             } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.white))
+//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.white))
             }
         }
     }
