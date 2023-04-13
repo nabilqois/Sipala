@@ -40,5 +40,10 @@ class ThemeActivity : AppCompatActivity() {
         binding.switchTheme.setOnCheckedChangeListener { _: CompoundButton?, isChecked: Boolean ->
             mainViewModel.saveThemeSetting(isChecked)
         }
+
+        binding.toolbar.setNavigationOnClickListener {
+//            finish()
+            onBackPressedDispatcher.onBackPressed()
+        }
     }
 }
