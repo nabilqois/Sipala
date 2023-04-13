@@ -42,7 +42,6 @@ class ThemeActivity : AppCompatActivity() {
         }
 
         binding.toolbar.setNavigationOnClickListener {
-//            finish()
             onBackPressedDispatcher.onBackPressed()
         }
     }

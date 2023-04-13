@@ -1,21 +1,15 @@
 package com.nabil.sipala
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.core.content.ContextCompat
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
 import com.nabil.sipala.databinding.ActivityHasilBinding
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+
 
 class HasilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityHasilBinding
@@ -27,13 +21,7 @@ class HasilActivity : AppCompatActivity() {
         Rule("R4", listOf("G1", "G2", "G7", "G8"), "A4"),
         Rule("R5", listOf("G2", "G3", "G6", "G13", "G14", "G15"), "A5"),
     )
-//    private val penyakit = mapOf<String, String>(
-//        "A1" to ListPenyakit.all[0].nama,
-//        "A2" to ListPenyakit.all[1].nama,
-//        "A3" to ListPenyakit.all[2].nama,
-//        "A4" to "Gastritis",
-//        "A5" to "Kanker Lambung"
-//    )
+
     private val penyakit = mapOf<String, Penyakit>(
         "A1" to ListPenyakit.all[0],
         "A2" to ListPenyakit.all[1],
@@ -111,7 +99,7 @@ class HasilActivity : AppCompatActivity() {
                 }
                 Log.d("algorithm", "\n")
                 Log.d("algorithm", "Hasil :")
-                if (!hasil.isEmpty()) {
+                if (hasil.isNotEmpty()) {
                     hasil.forEach {
                         Log.d("algorithm", "${it.hasil} ")
                     }
@@ -125,20 +113,27 @@ class HasilActivity : AppCompatActivity() {
         if (hasil.isEmpty()) {
             binding.tvPenyakit.text = "Tidak ada penyakit yang cocok"
             Log.d("algorithm", "hasil.isEmpty()")
+            binding.tvPenyebabTitle.visibility = View.INVISIBLE
+            binding.tvPengobatanTitle.visibility = View.INVISIBLE
+            binding.tvPencegahanTitle.visibility = View.INVISIBLE
         } else {
-//            val strBuilder = StringBuilder()
-//            hasil.forEach {
-//                strBuilder.appendLine(penyakit[it.hasil])
-//            }
-//            binding.tvPenyakit.text = strBuilder.trim()
+
             val penyakitAkhir = penyakit[hasil.last().hasil]
             binding.tvPenyakit.text = penyakitAkhir?.nama
             binding.tvPengertian.text = penyakitAkhir?.pengertian
+
             val penyebab = StringBuilder()
             penyakitAkhir?.penyebab?.forEach {
                 penyebab.appendLine("- $it")
             }
             binding.tvPenyebabList.text = penyebab
+
+            val pengobatan = StringBuilder()
+            penyakitAkhir?.pengobatan?.forEach {
+                pengobatan.appendLine("- $it")
+            }
+            binding.tvPengobatanList.text = pengobatan
+
             val pencegahan = StringBuilder()
             penyakitAkhir?.pencegahan?.forEach {
                 pencegahan.appendLine("- $it")
@@ -147,24 +142,7 @@ class HasilActivity : AppCompatActivity() {
         }
 
     }
-    override fun onStart() {
-        super.onStart()
-        val pref = SettingPreferences.getInstance(dataStore)
-        val mainViewModel = ViewModelProvider(this, ViewModelFactory(pref)).get(
-            ThemeViewModel::class.java
-        )
 
-        mainViewModel.getThemeSettings().observe(
-            this
-        ) { isDarkModeActive: Boolean ->
-            if (isDarkModeActive) {
-//                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.black))
-            } else {
-//                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-//                binding.tvPenyakit.setTextColor(ContextCompat.getColor(this, R.color.white))
-            }
-        }
-    }
 
     companion object {
         const val EXTRA = "extra"
