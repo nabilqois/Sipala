@@ -20,7 +20,7 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.cardLogout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
-//            Firebase.auth.signOut()
+
             val toMain = Intent(this, MainActivity::class.java)
             toMain.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             startActivity(toMain)
