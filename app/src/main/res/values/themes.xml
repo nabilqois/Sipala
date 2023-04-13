@@ -24,7 +24,7 @@
         <item name="cornerRadius">10dp</item>
         <item name="android:textSize">18sp</item>
         <item name="textAllCaps">false</item>
-        <item name="android:backgroundTint">#CCA69A</item>
+        <item name="android:backgroundTint">@color/pink_rose</item>
     </style>
 
     <style name="TitleBold">
