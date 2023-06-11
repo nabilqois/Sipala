@@ -1,217 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <ImageView
-        android:id="@+id/img_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/logo_sipala"
-        android:src="@drawable/sipala_logo"
-        android:translationX="68dp"
-        android:translationY="-55dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:text="Hello 👋🏻"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@id/tv_hello"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hello"
-        tools:text="Username" />
-
-    <TextView
-        android:id="@+id/tv_awali"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:paddingStart="20dp"
-        android:paddingEnd="50dp"
-        android:text="@string/awali_langkahmu_untuk_lambung_yang_lebih_sehat"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_logo" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        style="@style/MyCardView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/choco_red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/logo_sipala"
+            android:src="@drawable/sipala_logo"
+            android:translationX="68dp"
+            android:translationY="-55dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
+            android:id="@+id/tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:text="Hello 👋🏻"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/tv_hello"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hello"
+            tools:text="Username" />
+
+        <TextView
+            android:id="@+id/tv_awali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="22dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="50dp"
+            android:text="@string/awali_langkahmu_untuk_lambung_yang_lebih_sehat"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_logo"
+            app:layout_constraintBottom_toTopOf="@id/materialCardView"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            style="@style/MyCardView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/choco_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <TextView
-                android:id="@+id/tv_tips_kesehatan"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:text="TIPS KESEHATAN LAMBUNG"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="36dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <ImageView
-                android:id="@+id/ic_research"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_research"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="25dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_diagnosa_gejala"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="10dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="36dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_tips_kesehatan"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                >
+                android:layout_height="match_parent">
+
                 <TextView
-                    android:id="@+id/tv_diagnosa_gejala"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tv_tips_kesehatan"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="@string/diagnosa_gejala"
-                    android:layout_margin="30dp"
+                    android:text="TIPS KESEHATAN LAMBUNG"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    />
-            </com.google.android.material.card.MaterialCardView>
+                    android:textColor="@color/white"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_profile"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#FFD9D9D9"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginStart="16dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@id/card_diagnosa_gejala"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                >
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/ic_research"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_research"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_diagnosa_gejala"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="16dp"
-                        android:layout_marginTop="30dp"
-                        >
-                        <ImageButton
-                            android:id="@+id/img_btn_profile"
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:src="@drawable/person_outline"
-                            style="?android:attr/borderlessButtonStyle"
-                            app:tint="@color/pink_rose"
-                            android:contentDescription="profile button"
-                            />
-                    </com.google.android.material.card.MaterialCardView>
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_tips_kesehatan"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
                     <TextView
-                        android:id="@+id/tv_profiles"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tv_diagnosa_gejala"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Profiles"
-                        android:textSize="16sp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="30dp"
+                        android:textAlignment="center"
+                        android:text="@string/diagnosa_gejala"
+                        android:layout_margin="30dp"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
                         />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_settings"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#FFD9D9D9"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="10dp"
-                app:layout_constraintTop_toBottomOf="@id/card_diagnosa_gejala"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_profile"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFD9D9D9"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/card_diagnosa_gejala"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="16dp"
-                        android:layout_marginTop="30dp"
-                        >
-                        <ImageButton
-                            android:id="@+id/img_btn_settings"
-                            android:layout_width="55dp"
-                            android:layout_height="55dp"
-                            android:src="@drawable/settings_outline"
-                            style="?android:attr/borderlessButtonStyle"
-                            app:tint="@color/pink_rose"
-                            android:contentDescription="profile button"
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="16dp"
+                            android:layout_marginTop="30dp"
+                            >
+                            <ImageButton
+                                android:id="@+id/img_btn_profile"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:src="@drawable/person_outline"
+                                style="?android:attr/borderlessButtonStyle"
+                                app:tint="@color/pink_rose"
+                                android:contentDescription="profile button"
+                                />
+                        </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/tv_profiles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Profiles"
+                            android:textSize="16sp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="30dp"
                             />
-                    </com.google.android.material.card.MaterialCardView>
-                    <TextView
-                        android:id="@+id/tv_settings"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Settings"
-                        android:textSize="16sp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginBottom="30dp"
-                        />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_settings"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFD9D9D9"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/card_diagnosa_gejala"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="16dp"
+                            android:layout_marginTop="30dp"
+                            >
+                            <ImageButton
+                                android:id="@+id/img_btn_settings"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:src="@drawable/settings_outline"
+                                style="?android:attr/borderlessButtonStyle"
+                                app:tint="@color/pink_rose"
+                                android:contentDescription="profile button"
+                                />
+                        </com.google.android.material.card.MaterialCardView>
+                        <TextView
+                            android:id="@+id/tv_settings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Settings"
+                            android:textSize="16sp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="30dp"
+                            />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

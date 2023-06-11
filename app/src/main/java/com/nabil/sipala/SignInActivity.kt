@@ -29,6 +29,10 @@ class SignInActivity : AppCompatActivity() {
             login()
         }
         txtRegisterListener()
+
+        binding.tvForgotPass.setOnClickListener {
+            startActivity(Intent(this, ForgotPasswordActivity::class.java))
+        }
     }
 
     private fun login() {

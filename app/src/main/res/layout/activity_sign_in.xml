@@ -10,6 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="22dp"
         >
 
         <ImageView
@@ -128,13 +129,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/tvForgotPpass"
+            android:id="@+id/tvForgotPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/layoutPassword"
             app:layout_constraintStart_toStartOf="parent"
             android:text="@string/forgor_password"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="16dp"
             android:textColor="#7D8797"
             android:textSize="17sp"
             android:textStyle="bold"
@@ -150,7 +151,7 @@
             android:textSize="20sp"
             android:textColor="@color/white"
             android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@+id/tvForgotPpass"
+            app:layout_constraintTop_toBottomOf="@+id/tvForgotPass"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="35dp"
@@ -170,6 +171,7 @@
             android:textSize="21sp"
             android:textStyle="bold"
             android:fontFamily="@font/nunito_regular"
+            android:layout_marginBottom="24dp"
             app:layout_constraintTop_toBottomOf="@id/btnLogin"
             app:layout_constraintEnd_toEndOf="@id/btnLogin"
             app:layout_constraintStart_toStartOf="@id/btnLogin"/>
@@ -177,19 +179,19 @@
 
 
         <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:visibility="visible"
-            android:visibility="gone"
-            android:indeterminate="true"
-            android:indeterminateTint="@android:color/black"
-            />
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/black"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
